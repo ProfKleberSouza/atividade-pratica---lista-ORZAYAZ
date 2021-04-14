@@ -1,22 +1,43 @@
 #include "Lista.h"
 
-int TamanhoLista(Lista *L)
+Celula *NovaCelula()
 {
+	Celula *tmp = (Celula*) malloc(sizeof(Celula));
+	tmp->prox = NULL;
+	return tmp;
 }
 
-void NovaFila(Lista *L);
-void Enfilerar(Lista *L);
+int TamanhoLista(Lista *L)
+{
+	return L->tam;
+}
 
-void InserirFinal(Lista *L);
-void InserirInicio(Lista *L);
+void NovaFila(Lista *L)
+{
+	Celula *nova = NovaCelula();
 
+	L->inicio = nova;
+	L->fim = nova;
+	L->tam = 0;
+}
 
-void Pesquisar(Lista *L, );
+void Enfilerar(Lista *L, Celula dado)
+{
+	Celula *nova = new_celula();
+	nova->dado = dado;
 
-void RemoverFinal(Lista *L);
-void RemoverInicio(Lista *L);
+	L->fim->prox = nova;
+	L->fim = nova;
+	L->tam++;
+}
 
-void RemoverEspecifico();
-void AlterarProduto(Lista *L, int Codigo);
+void ImprimirLista(Lista *L)
+{
+	Celula *tmp = L->inicio->prox;
 
-void ImprimirLista(Lista *L);
+	while(tmp != NULL)
+	{
+		print_pessoa(tmp->dado);
+		tmp = tmp->prox;
+	}
+}
