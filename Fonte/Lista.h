@@ -37,7 +37,7 @@ void InserirFinal(Lista *L);
 void InserirInicio(Lista *L);
 
 
-void Pesquisar(Lista *L, );
+//void Pesquisar(Lista *L, );
 
 void RemoverFinal(Lista *L);
 void RemoverInicio(Lista *L);
@@ -45,8 +45,13 @@ void RemoverInicio(Lista *L);
 void RemoverEspecifico();
 void AlterarProduto(Lista *L, int Codigo);
 
-void ImprimirLista(Lista *L);
-
+void ImprimirCelula(Celula C)
+{
+	printf("Código → %d\n",C.dado.codigo);
+	printf("Descrição → %s\n",C.dado.descricao);
+	printf("Valor → %.2f\n",C.dado.valor);
+	printf("Quantidade → %d\n",C.dado.quantidade);
+}
 
 //Demais funcionalidades do sistema
 
