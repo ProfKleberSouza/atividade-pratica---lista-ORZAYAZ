@@ -38,23 +38,13 @@ int TamanhoLista(Lista *L)
 	return L->tam;
 }
 
-void NovaFila(Lista *L)
+void NovaLista(Lista *L)
 {
 	Celula *nova = NovaCelula();
 
 	L->inicio = nova;
 	L->fim = nova;
 	L->tam = 0;
-}
-
-void Enfilerar(Lista *L, Celula dado)
-{
-	Celula *nova = new_celula();
-	nova->dado = dado;
-
-	L->fim->prox = nova;
-	L->fim = nova;
-	L->tam++;
 }
 
 void InserirFinal(Lista *L);
@@ -66,7 +56,32 @@ void InserirInicio(Lista *L);
 void RemoverFinal(Lista *L);
 void RemoverInicio(Lista *L);
 
-void RemoverEspecifico();
+void RemoverEspecifico(Lista *L, int Codigo)
+{
+	Celula *Anterior = l->inicio;
+	Celula *Auxiliar = l->inicio->prox;
+	
+	while(Auxiliar!=NULL && Auxiliar->dado.codigo != Codigo)
+	{
+		Anterior = Anterior->prox;
+		Auxiluar = Anterior->prox;
+	}
+	
+	if(Auxiliar!=NULL)
+	{
+		Anterior->prox = Auxiliar->prox;
+		free(Auxiliar);	
+		Auxiliar = NULL;
+		
+		if(Anterior->prox == NULL)
+		{
+			L->fim = Anterior;
+		}
+		
+		L->tam--;
+	}
+}
+
 void AlterarProduto(Lista *L, int Codigo);
 
 void ImprimirCelula(Celula C)
@@ -77,15 +92,14 @@ void ImprimirCelula(Celula C)
 	printf("Quantidade → %d\n",C.dado.quantidade);
 }
 
-void ImprimirLista(Lista *L)
+void Enfilerar(Lista *L, Produto dado)
 {
-	Celula *tmp = L->inicio->prox;
+  Celula *nova = NovaCelula();
+  nova->dado = dado;
 
-	while(tmp != NULL)
-	{
-		print_pessoa(tmp->dado);
-		tmp = tmp->prox;
-	}
+  L->fim->prox = nova;
+  L->fim = nova;
+  L->tam++;
 }
 
 //Demais funcionalidades do sistema
