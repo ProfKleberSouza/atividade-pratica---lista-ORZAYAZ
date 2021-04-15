@@ -47,31 +47,29 @@ void NovaLista(Lista *L)
 	L->tam = 0;
 }
 
-void InserirFinal(Lista *L);
+void InserirFinal(Lista *L, Produto P)
+{
+	Celula *tmp = NovaCelula();
+	tmp->dado = P;
+
+	L->fim->prox = tmp;
+	L->fim = tmp;
+	L->tam++;
+}
+
 void InserirInicio(Lista *L);
 
 
 //void Pesquisar(Lista *L, );
-
-void RemoverInicio(Lista *L)
-{
-	RemoverEspecifico(L,0);
-}
-
-void RemoverFinal(Lista *L)
-{
-	RemoverEspecifico(L,L->tam-1);
-}
-
 void RemoverEspecifico(Lista *L, int Codigo)
 {
-	Celula *Anterior = l->inicio;
-	Celula *Auxiliar = l->inicio->prox;
+	Celula *Anterior = L->inicio;
+	Celula *Auxiliar = L->inicio->prox;
 	
 	while(Auxiliar!=NULL && Auxiliar->dado.codigo != Codigo)
 	{
 		Anterior = Anterior->prox;
-		Auxiluar = Anterior->prox;
+		Auxiliar = Anterior->prox;
 	}
 	
 	if(Auxiliar!=NULL)
@@ -89,6 +87,18 @@ void RemoverEspecifico(Lista *L, int Codigo)
 	}
 }
 
+void RemoverInicio(Lista *L)
+{
+	RemoverEspecifico(L,0);
+}
+
+void RemoverFinal(Lista *L)
+{
+	RemoverEspecifico(L,L->tam-1);
+}
+
+
+
 void AlterarProduto(Lista *L, int Codigo);
 
 void ImprimirCelula(Celula C)
@@ -99,11 +109,27 @@ void ImprimirCelula(Celula C)
 	printf("Quantidade → %d\n",C.dado.quantidade);
 }
 
+void ImprimirProduto(Produto P)
+{
+	printf("| %d      | %s                 | %.2f | %d         |\n",P.codigo,P.descricao,P.valor,P.quantidade);
+}
+
 void ImprimirLista(Lista *L)
 {
-	printf("+-------+--------------+-------+--------------\n");
-	printf("+-------+--------------+-------+--------------\n");
+	printf("+--------+---------------------------+-------+------------+\n");
+	printf("| Código |         Descrição         | Valor | Quantidade |\n");
+	printf("+--------+---------------------------+-------+------------*\n");
+	
+	Celula *tmp = L->inicio->prox;
+	while(tmp != NULL)
+	{
+		ImprimirProduto(tmp->dado);
+		printf("-----------------------------------------------------------\n");
+		tmp = tmp->prox;
+	}
 }
+
+
 
 void Enfilerar(Lista *L, Produto dado)
 {
