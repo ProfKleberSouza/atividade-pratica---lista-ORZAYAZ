@@ -53,8 +53,15 @@ void InserirInicio(Lista *L);
 
 //void Pesquisar(Lista *L, );
 
-void RemoverFinal(Lista *L);
-void RemoverInicio(Lista *L);
+void RemoverInicio(Lista *L)
+{
+	RemoverEspecifico(L,0);
+}
+
+void RemoverFinal(Lista *L)
+{
+	RemoverEspecifico(L,L->tam-1);
+}
 
 void RemoverEspecifico(Lista *L, int Codigo)
 {
@@ -90,6 +97,12 @@ void ImprimirCelula(Celula C)
 	printf("Descrição → %s\n",C.dado.descricao);
 	printf("Valor → %.2f\n",C.dado.valor);
 	printf("Quantidade → %d\n",C.dado.quantidade);
+}
+
+void ImprimirLista(Lista *L)
+{
+	printf("+-------+--------------+-------+--------------\n");
+	printf("+-------+--------------+-------+--------------\n");
 }
 
 void Enfilerar(Lista *L, Produto dado)
