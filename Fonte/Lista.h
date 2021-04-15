@@ -26,12 +26,36 @@ typedef struct Lista
   int tam;
 }Lista;
 
-Celula *NovaCelula();
+Celula *NovaCelula()
+{
+	Celula *tmp = (Celula*) malloc(sizeof(Celula));
+	tmp->prox = NULL;
+	return tmp;
+}
 
-int TamanhoLista(Lista *L);
+int TamanhoLista(Lista *L)
+{
+	return L->tam;
+}
 
-void NovaFila(Lista *L);
-void Enfilerar(Lista *L);
+void NovaFila(Lista *L)
+{
+	Celula *nova = NovaCelula();
+
+	L->inicio = nova;
+	L->fim = nova;
+	L->tam = 0;
+}
+
+void Enfilerar(Lista *L, Celula dado)
+{
+	Celula *nova = new_celula();
+	nova->dado = dado;
+
+	L->fim->prox = nova;
+	L->fim = nova;
+	L->tam++;
+}
 
 void InserirFinal(Lista *L);
 void InserirInicio(Lista *L);
@@ -51,6 +75,17 @@ void ImprimirCelula(Celula C)
 	printf("Descrição → %s\n",C.dado.descricao);
 	printf("Valor → %.2f\n",C.dado.valor);
 	printf("Quantidade → %d\n",C.dado.quantidade);
+}
+
+void ImprimirLista(Lista *L)
+{
+	Celula *tmp = L->inicio->prox;
+
+	while(tmp != NULL)
+	{
+		print_pessoa(tmp->dado);
+		tmp = tmp->prox;
+	}
 }
 
 //Demais funcionalidades do sistema
