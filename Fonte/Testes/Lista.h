@@ -161,7 +161,87 @@ void RemoverFinal(Lista *L)
 	RemoverEspecifico(L,L->tam);
 }
 
-void AlterarProduto(Lista *L, int Codigo);
+void AlterarProduto(Lista *L, int Codigo)
+{
+	int Escolha = 0;
+	
+	Celula *Anterior = L->inicio;
+	Celula *Auxiliar = L->inicio->prox;
+	
+	while(Auxiliar!=NULL && Auxiliar->dado.codigo != Codigo)
+	{
+		Anterior = Anterior->prox;
+		Auxiliar = Anterior->prox;
+	}
+	
+	Pesquisar(L,Codigo);
+	printf("\n");
+	printf("Qual destas opções deseja alterar: \n");
+	printf("\n");
+	printf("0 → Cancelar\n");
+	printf("1 → Código do produto\n");
+	printf("2 → Descrição do produto\n");
+	printf("3 → Valor do produto\n");
+	printf("4 → Quantidade\n");
+	printf("\n");
+	scanf("%d", &Escolha);
+	
+	switch(Escolha)
+	{
+		case 0:
+		{
+			break;
+		}
+		
+		case 1:
+		{
+			printf("Novo código: \n");
+			scanf("%d", &Auxiliar->dado.codigo);
+			InserirInicio(L,Auxiliar->dado);
+			printf("Novo produto\n");
+			printf("+----------------------+------------------------+\n");
+			printf("|        Código        | %d                      |\n",Auxiliar->dado.codigo);
+			printf("+----------------------+------------------------+\n");
+			printf("|       Descrição      | %s              |\n",Auxiliar->dado.descricao);
+			printf("|      Quantidade      | %d                     |\n",Auxiliar->dado.quantidade);
+			printf("|         Valor        | %.2f                  |\n",Auxiliar->dado.valor);
+			printf("+-----------------------------------------------+\n");
+			break;
+		}
+		
+		case 2:
+		{
+			printf("Nova descrição: \n");
+			scanf("%s", Auxiliar->dado.descricao);
+			printf("Novo produto\n");
+			Pesquisar(L,Codigo);
+			break;
+		}
+		
+		case 3:
+		{
+			printf("Novo valor: \n");
+			scanf("%f", &Auxiliar->dado.valor);
+			printf("Novo produto\n");
+			Pesquisar(L,Codigo);
+			break;
+		}
+		
+		case 4:
+		{
+			printf("Nova quantidade: \n");
+			scanf("%d",&Auxiliar->dado.quantidade);
+			printf("Novo produto\n");
+			Pesquisar(L,Codigo);
+			break;
+		}
+		
+		default:
+		{
+			printf("Opção inválida.\n");
+		}
+	}
+}
 
 void ImprimirCelula(Celula C)
 {
