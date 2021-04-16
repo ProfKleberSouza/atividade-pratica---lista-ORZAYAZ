@@ -4,6 +4,7 @@ int Escolha ()
 {
 	int Opcao = 0;
 	
+	printf("\n\n");
 	printf("+---------------------------------------------+\n");
 	printf("|     SCE - Sistema de Controle de Estoque    |\n");
 	printf("+---------------------------------------------+\n");
@@ -60,26 +61,58 @@ int main ()
 				printf("| Inserir um produto no início da lista |\n");
 				printf("+---------------------------------------+\n");	
 				printf("\n");
+				
+				Produto P;
+				
+				printf("Digite o valor do produto: ");
+				scanf("%f", &P.valor);
+				printf("Digite o código do produto: ");
+				scanf("%d", &P.codigo);
+				printf("Digite a descrição do produto: ");
+				scanf("%s", P.descricao);
+				printf("Digite a quantidade do produto: ");
+				scanf("%d", &P.quantidade);
+				
+				InserirInicio(&Estoque, P); 
 				break;
 			}
 			
 			case 3:
 			{
+				
 				printf("\n");
 				printf("+---------------------------------------+\n");
 				printf("| Inserir um produto no final da lista  |\n");
 				printf("+---------------------------------------+\n");	
 				printf("\n");
+				
+				Produto P;
+				
+				printf("Digite o valor do produto: ");
+				scanf("%f", &P.valor);
+				printf("Digite o código do produto: ");
+				scanf("%d", &P.codigo);
+				printf("Digite a descrição do produto: ");
+				scanf("%s", P.descricao);
+				printf("Digite a quantidade do produto: ");
+				scanf("%d", &P.quantidade);
+				
+				InserirFinal(&Estoque, P);   
 				break;
 			}
 			
 			case 4:
 			{
+				int Codigo = 0;
+				
 				printf("\n");
 				printf("+---------------------------------------+\n");
-				printf("|    Pesquisar um produto na lista      |\n");
+				printf("|     Pesquisar um produto na lista     |\n");
 				printf("+---------------------------------------+\n");	
 				printf("\n");
+				printf("Digite o código do produto: \n");
+				scanf("%d", &Codigo);
+				Pesquisar(&Estoque, Codigo);
 				break;
 			}
 			
@@ -90,16 +123,25 @@ int main ()
 				printf("| Remover um produto no início da lista |\n");
 				printf("+---------------------------------------+\n");	
 				printf("\n");
+				RemoverInicio(&Estoque);
+				printf("\nApós excluir:\n");
+				ImprimirLista(&Estoque);
 				break;
 			}
 			
 			case 6:
 			{
+				int Codigo = 0;
+				
 				printf("\n");
 				printf("+---------------------------------------+\n");
 				printf("|     Remover um produto específico     |\n");
 				printf("+---------------------------------------+\n");	
 				printf("\n");
+				
+				printf("Digite o código do produto: \n");
+				scanf("%d", &Codigo);
+				RemoverEspecifico(&Estoque, Codigo);
 				break;
 			}
 							
@@ -107,19 +149,28 @@ int main ()
 			{
 				printf("\n");
 				printf("+---------------------------------------+\n");
-				printf("| Remover um produto no início da lista |\n");
+				printf("| Remover um produto no final da lista  |\n");
 				printf("+---------------------------------------+\n");	
 				printf("\n");
+				RemoverFinal(&Estoque);
+				printf("\nApós excluir:\n");
+				ImprimirLista(&Estoque);
 				break;
 			}
 			
 			case 8:
 			{
+				int Codigo = 0;
+				
 				printf("\n");
-				printf("+---------------------------------------+\n");
-				printf("| Remover um produto no início da lista |\n");
-				printf("+---------------------------------------+\n");	
+				printf("+----------------------------------------+\n");
+				printf("| Alterar dados de um produto específico |\n");
+				printf("+----------------------------------------+\n");	
 				printf("\n");
+				
+				printf("Digite o código do produto: \n");
+				scanf("%d", &Codigo);
+				AlterarProduto(&Estoque,Codigo);
 				break;
 			}
 			
@@ -130,16 +181,23 @@ int main ()
 				printf("| Exibir a lista completa |\n");
 				printf("+-------------------------+\n");	
 				printf("\n");
+				ImprimirLista(&Estoque);
 				break;
 			}
 			
 			case 10:
 			{
+				int Codigo = 0;
+				
 				printf("\n");
 				printf("+--------------------------------------+\n");
 				printf("| Exibir uma célula e suas informações |\n");
 				printf("+--------------------------------------+\n");	
 				printf("\n");
+				
+				printf("Digite o código do produto: \n");
+				scanf("%d", &Codigo);
+				Pesquisar(&Estoque, Codigo);
 				break;
 			}
 			
@@ -154,11 +212,7 @@ int main ()
 				printf("\n");
 				break;
 			}
-			
-			default:
-			{
-				printf("Opção inválida, tente novamente.\n");
-			}
+
 		}
 		
 	}while(Opcao != 0);
