@@ -68,7 +68,36 @@ void InserirInicio(Lista *L, Produto P)
 }
 
 
-//void Pesquisar(Lista *L, );
+void Pesquisar(Lista *L, int Codigo)
+{
+	Celula *Anterior = L->inicio;
+	Celula *Auxiliar = L->inicio->prox;
+	
+	while(Auxiliar!=NULL && Auxiliar->dado.codigo != Codigo)
+	{
+		Anterior = Anterior->prox;
+		Auxiliar = Anterior->prox;
+	}
+	
+	if(Auxiliar==NULL)
+	{
+		printf("Produto não encontrado, tente novamente.\n");
+	}
+	
+	else
+	{
+		printf("\n");
+		printf("+----------------------+------------------------+\n");
+		printf("|        Código        | %d                      |\n",Codigo);
+		printf("+----------------------+------------------------+\n");
+		printf("|       Descrição      | %s              |\n",Auxiliar->dado.descricao);
+		printf("|      Quantidade      | %d                     |\n",Auxiliar->dado.quantidade);
+		printf("|         Valor        | %.2f                  |\n",Auxiliar->dado.valor);
+		printf("+-----------------------------------------------+\n");
+		printf("\n");
+	}
+}
+
 void RemoverEspecifico(Lista *L, int Codigo)
 {
 	Celula *Anterior = L->inicio;
@@ -171,7 +200,5 @@ void Enfilerar(Lista *L, Produto dado)
   L->fim = nova;
   L->tam++;
 }
-
-//Demais funcionalidades do sistema
 
 #endif
