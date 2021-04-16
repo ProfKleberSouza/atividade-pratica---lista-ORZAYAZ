@@ -89,12 +89,12 @@ void RemoverEspecifico(Lista *L, int Codigo)
 
 void RemoverInicio(Lista *L)
 {
-	RemoverEspecifico(L,0);
+	RemoverEspecifico(L,1);
 }
 
 void RemoverFinal(Lista *L)
 {
-	RemoverEspecifico(L,L->tam-1);
+	RemoverEspecifico(L,L->tam);
 }
 
 
