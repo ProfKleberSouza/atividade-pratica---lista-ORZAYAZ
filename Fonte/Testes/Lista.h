@@ -57,7 +57,15 @@ void InserirFinal(Lista *L, Produto P)
 	L->tam++;
 }
 
-void InserirInicio(Lista *L);
+void InserirInicio(Lista *L, Produto P)
+{
+	L->inicio->dado = P;
+	Celula *Auxiliar = NovaCelula();
+	Auxiliar->prox = L->inicio;
+	L->inicio = Auxiliar;
+	
+	L->tam++;
+}
 
 
 //void Pesquisar(Lista *L, );
@@ -87,6 +95,33 @@ void RemoverEspecifico(Lista *L, int Codigo)
 	}
 }
 
+void RemoverEspecificoPos(Lista *L, int Pos)
+{
+	Celula *Anterior = L->inicio;
+	Celula *Auxiliar = L->inicio->prox;
+	
+	while(Auxiliar!=NULL && Pos > 0)
+	{
+		Anterior = Anterior->prox;
+		Auxiliar = Anterior->prox;
+		Pos--;
+	}
+	
+	if(Auxiliar!=NULL)
+	{
+		Anterior->prox = Auxiliar->prox;
+		free(Auxiliar);	
+		Auxiliar = NULL;
+		
+		if(Anterior->prox == NULL)
+		{
+			L->fim = Anterior;
+		}
+		
+		L->tam--;
+	}
+}
+
 void RemoverInicio(Lista *L)
 {
 	RemoverEspecifico(L,1);
@@ -96,8 +131,6 @@ void RemoverFinal(Lista *L)
 {
 	RemoverEspecifico(L,L->tam);
 }
-
-
 
 void AlterarProduto(Lista *L, int Codigo);
 
@@ -128,8 +161,6 @@ void ImprimirLista(Lista *L)
 		tmp = tmp->prox;
 	}
 }
-
-
 
 void Enfilerar(Lista *L, Produto dado)
 {
