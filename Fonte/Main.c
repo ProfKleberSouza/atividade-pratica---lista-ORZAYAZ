@@ -17,7 +17,8 @@ int Escolha ()
 	printf(" 7 → Remover um produto específico\n");
 	printf(" 8 → Alterar dados de um produto específico\n");
 	printf(" 9 → Exibir a lista inteira\n");
-	printf("10 → Exibir o tamanho da lista\n");
+	printf("10 → Exibir uma célula e suas informações\n");
+	printf("11 → Exibir o tamanho da lista\n");
 	printf("\n");
 	printf("0 → Sair do programa\n");
 	printf("-------------------------------------------\n");
@@ -42,11 +43,14 @@ int main ()
 			case 1:
 			{
 				printf("\n");
-				printf("O programa 'SCE' faz parte de um trabalho dado\n");
-				printf("pelo professor Kleber Souza aos estudantes da\n");
-				printf("disciplina de AEDII, com intuito de praticar os \n");
-				printf("ensinos sobre TAD\n");	
-				printf("------------------------------------------------\n");
+				printf("+------------------------------+\n");
+				printf("| Informações sobre o programa |\n");
+				printf("+------------------------------+-----------------+\n");
+				printf("| O programa 'SCE' faz parte de um trabalho dado |\n");
+				printf("| pelo professor Kleber Souza aos estudantes da  |\n");
+				printf("| disciplina de AEDII, com intuito de praticar   |\n");
+				printf("| os ensinos sobre TAD                           |\n");	
+				printf("+------------------------------------------------+\n");
 				printf("\n");
 			}
 		}
