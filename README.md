@@ -1,53 +1,29 @@
-# Atividade Prática de Lista Encadeada
+# Trabalho - Fila de Vacinacao
 
-O objetivo desta atividade é desenvolver, de forma modular, as funcionalidades de uma lista encadeada. Considere as seguintes estruturas para definição da lista:
+![Main](https://raw.githubusercontent.com/ProfKleberSouza/atividade-pratica---lista-ORZAYAZ/main/Imagens/Main.png)
 
-```c
-// DEFINICAO DO TIPO PRODUTO
-typedef struct Produto{
-  int codigo;
-  char descricao[100];
-  float valor;
-  int quantidade;
-}Produto;
+## Objetivo:
+ O programa 'SCE' faz parte de um trabalho dado pelo professor Kleber Souza aos estudantes da disciplina de AEDII, com intuito de praticar os ensinos sobre TAD. 
+## Partipantes:
+ - Pedro Igor Martins dos Reis | [ORZAYAZ](https://github.com/ORZAYAZ)
+## Professor:
+ - Kleber Souza | [ProfKleberSouza](https://github.com/ProfKleberSouza)
+
+## Requisitos
+ - Windows → [MinGW](https://sourceforge.net/projects/mingw/)
+ - Linux → GCC
+ ```
+ # Sistemas baseados no Debian
+ sudo apt install -y gcc
+ # Sistemas baseados no RHEL
+ sudo dnf install -y gcc
 ```
-
-```c
-// DEFINICAO DO TIPO CELULA
-typedef struct Celula{
-  Produto dado;
-  struct Celula *prox;
-}Celula;
+## Como executar
 ```
-
-```c
-// DEFINICAO DO TIPO LISTA
-typedef struct Lista{
-  Celula *inicio;
-  Celula *fim;
-  int tam;
-}Lista;
+git clone https://github.com/ProfKleberSouza/atividade-pratica---lista-ORZAYAZ
+cd atividade-pratica---lista-ORZAYAZ/Fonte/
+make Main
+./Main
 ```
-Nossa estrutura lista será utilizada para desenvolver um sistema de controle de estoque com as seguintes funcionlidades:
- - CRUD de Produto (Create, Read, Update, Delete)
- - Relatórios para verificar o status da lista, mostrando a quantidade de produtos, produtos com estoque baixo, produtos ordenados por valor, por quantidade, por nome, etc...
- - Uma funcionalidade única e exclusiva, definida por você
-
-Você deverá desenvolver um programa, de forma modular, implementando primeiro toda as funções do programa e realizando testes unitários para cada função. Depois de todas as funções desenvolvidas e testadas, você deverá criar um programa principal para chamar as funções.
-
-Você deverá implementar as funções nesta ordem:
- 1. Método para criar uma lista
- 2. Método para inserir um produto no inicio da lista
- 3. Método para inserir um produto no fim da lista
- 4. Método para pesquisar um elemento da lista por codigo
- 5. Método para remover um produto no inicio da lista
- 6. Método para remover um produto no final da lista
- 7. Método para remover um produto especifico, que recebe o código do produto a ser removido
- 8. Método para alterar os dados de um produto especifico, que recebe o código do produto a ser alterado
- 9. Método para exibir toda a lista
- 10. Método para retornar o tamanho da lista
- 11. Demais funcionalidades do sistema
-
-Você deverá implementar passo a passo cada funcionalidade, realizar testes unitários e registrar passo a passo o seu desenvolvimento.
 
 
