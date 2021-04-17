@@ -9,6 +9,8 @@
 ## Professor:
  - Kleber Souza | [ProfKleberSouza](https://github.com/ProfKleberSouza)
 
+## Referência
+[Template](https://github.com/KleberSouza/pratica-lista-template)
 ## Requisitos
  - Windows → [MinGW](https://sourceforge.net/projects/mingw/)
  - Linux → GCC
