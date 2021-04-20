@@ -153,12 +153,12 @@ void RemoverEspecificoPos(Lista *L, int Pos)
 
 void RemoverInicio(Lista *L)
 {
-	RemoverEspecifico(L,1);
+	RemoverEspecificoPos(L,0);
 }
 
 void RemoverFinal(Lista *L)
 {
-	RemoverEspecifico(L,L->tam);
+	RemoverEspecificoPos(L,L->tam - 1);
 }
 
 void AlterarProduto(Lista *L, int Codigo)
