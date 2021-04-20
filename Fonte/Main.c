@@ -14,8 +14,8 @@ int Escolha ()
 	printf("  |  3 | Inserir um produto no final da lista   |\n");
 	printf("  |  4 | Pesquisar um produto na lista          |\n");
 	printf("  |  5 | Remover um produto no início da lista  |\n");
-	printf("  |  6 | Remover um produto no final da lista   |\n");
-	printf("  |  7 | Remover um produto específico          |\n");
+	printf("  |  6 | Remover um produto específico          |\n");
+	printf("  |  7 | Remover um produto no final da lista   |\n");
 	printf("  |  8 | Alterar dados de um produto específico |\n");
 	printf("  |  9 | Exibir a lista inteira                 |\n");
 	printf("  | 10 | Exibir uma célula e suas informações   |\n");
