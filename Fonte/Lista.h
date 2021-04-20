@@ -291,6 +291,7 @@ void Reiniciar()
 	printf("  +-------------------------+\n");
 	printf("  |    1 - Sim | 0 - Não    |\n");
 	printf("  +-------------------------+\n");
+	printf("\n");
 }
 void Fim()
 {
