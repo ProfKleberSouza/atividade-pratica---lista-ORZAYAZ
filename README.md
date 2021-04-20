@@ -33,5 +33,7 @@ cd atividade-pratica---lista-ORZAYAZ/Fonte/
 make Main
 ./Main
 ```
+## Exemplo de lista:
+![Exemplo](https://raw.githubusercontent.com/ProfKleberSouza/atividade-pratica---lista-ORZAYAZ/main/Imagens/20210420_19h35m11s_grim.png)
 
 
