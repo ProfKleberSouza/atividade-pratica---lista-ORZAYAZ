@@ -87,13 +87,13 @@ void Pesquisar(Lista *L, int Codigo)
 	else
 	{
 		printf("\n");
-		printf("+----------------------+------------------------+\n");
-		printf("|        Código        | %d                      |\n",Codigo);
-		printf("+----------------------+------------------------+\n");
-		printf("|       Descrição      | %s              |\n",Auxiliar->dado.descricao);
-		printf("|      Quantidade      | %d                     |\n",Auxiliar->dado.quantidade);
-		printf("|         Valor        | %.2f                  |\n",Auxiliar->dado.valor);
-		printf("+-----------------------------------------------+\n");
+		printf("  +----------------------+------------------------+\n");
+		printf("  |        Código        | %d                      |\n",Codigo);
+		printf("  +----------------------+------------------------+\n");
+		printf("  |       Descrição      | %s              |\n",Auxiliar->dado.descricao);
+		printf("  |      Quantidade      | %d                     |\n",Auxiliar->dado.quantidade);
+		printf("  |         Valor        | %.2f                  |\n",Auxiliar->dado.valor);
+		printf("  +-----------------------------------------------+\n");
 		printf("\n");
 	}
 }
@@ -199,13 +199,15 @@ void AlterarProduto(Lista *L, int Codigo)
 			scanf("%d", &Auxiliar->dado.codigo);
 			InserirInicio(L,Auxiliar->dado);
 			printf("Novo produto\n");
-			printf("+----------------------+------------------------+\n");
-			printf("|        Código        | %d                      |\n",Auxiliar->dado.codigo);
-			printf("+----------------------+------------------------+\n");
-			printf("|       Descrição      | %s              |\n",Auxiliar->dado.descricao);
-			printf("|      Quantidade      | %d                     |\n",Auxiliar->dado.quantidade);
-			printf("|         Valor        | %.2f                  |\n",Auxiliar->dado.valor);
-			printf("+-----------------------------------------------+\n");
+			printf("  +-----------------------+\n");
+			printf("  | Infomações do produto |\n");
+			printf("  +-----------------------+------------------------+\n");
+			printf("  |        Código         | %d                      |\n",Auxiliar->dado.codigo);
+			printf("  +-----------------------+------------------------+\n");
+			printf("  |       Descrição       | %s              |\n",Auxiliar->dado.descricao);
+			printf("  |      Quantidade       | %d                     |\n",Auxiliar->dado.quantidade);
+			printf("  |         Valor         | %.2f                  |\n",Auxiliar->dado.valor);
+			printf("  +------------------------------------------------+\n"); 
 			break;
 		}
 		
@@ -253,22 +255,23 @@ void ImprimirCelula(Celula C)
 
 void ImprimirProduto(Produto P)
 {
-	printf("| %d      | %s                 | %.2f | %d         |\n",P.codigo,P.descricao,P.valor,P.quantidade);
+	printf("  | %d      | %s                 | %.2f | %d         |\n",P.codigo,P.descricao,P.valor,P.quantidade);
 }
 
 void ImprimirLista(Lista *L)
 {
-	printf("+--------+---------------------------+-------+------------+\n");
-	printf("| Código |         Descrição         | Valor | Quantidade |\n");
-	printf("+--------+---------------------------+-------+------------*\n");
+	printf("  +--------+---------------------------+-------+------------+\n");
+	printf("  | Código |         Descrição         | Valor | Quantidade |\n");
+	printf("  +--------+---------------------------+-------+------------*\n");
 	
 	Celula *tmp = L->inicio->prox;
 	while(tmp != NULL)
 	{
 		ImprimirProduto(tmp->dado);
-		printf("-----------------------------------------------------------\n");
+		printf("  -----------------------------------------------------------\n");
 		tmp = tmp->prox;
 	}
+	printf("\n");
 }
 
 void Enfilerar(Lista *L, Produto dado)
@@ -279,6 +282,23 @@ void Enfilerar(Lista *L, Produto dado)
   L->fim->prox = nova;
   L->fim = nova;
   L->tam++;
+}
+
+void Reiniciar()
+{
+	printf("  +-------------------------+\n");
+	printf("  | Deseja voltar ao menu ? |\n");  
+	printf("  +-------------------------+\n");
+	printf("  |    1 - Sim | 0 - Não    |\n");
+	printf("  +-------------------------+\n");
+}
+void Fim()
+{
+	printf("\n");
+	printf("  +-----------------+\n");
+	printf("  | Fim do programa |\n");
+	printf("  +-----------------+\n");
+	printf("\n");
 }
 
 #endif
