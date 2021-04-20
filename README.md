@@ -15,10 +15,16 @@
  - Windows → [MinGW](https://sourceforge.net/projects/mingw/)
  - Linux → GCC
  ```
- # Sistemas baseados no Debian
- sudo apt install -y gcc
- # Sistemas baseados no RHEL
- sudo dnf install -y gcc
+# Sistemas baseados no Debian
+sudo apt install -y gcc git
+# Sistemas baseados no RHEL
+sudo dnf install -y gcc git
+# Sistemas baseados no Arch Linux
+sudo pacman -S gcc git
+# Void Linux
+sudo xbps-install -S gcc git
+# Solus OS
+sudo eopkg install gcc git
 ```
 ## Como executar
 ```
