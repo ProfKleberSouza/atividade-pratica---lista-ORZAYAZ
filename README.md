@@ -9,9 +9,9 @@
 ## Professor:
  - Kleber Souza | [ProfKleberSouza](https://github.com/ProfKleberSouza)
 
-## Referência
+## Referência:
 [Template](https://github.com/KleberSouza/pratica-lista-template)
-## Requisitos
+## Requisitos:
  - Windows → [MinGW](https://sourceforge.net/projects/mingw/)
  - Linux → GCC
  ```
@@ -26,7 +26,7 @@ sudo xbps-install -S gcc git
 # Solus OS
 sudo eopkg install gcc git
 ```
-## Como executar
+## Como executar:
 ```
 git clone https://github.com/ProfKleberSouza/atividade-pratica---lista-ORZAYAZ
 cd atividade-pratica---lista-ORZAYAZ/Fonte/
