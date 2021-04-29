@@ -1,6 +1,6 @@
 # Atividade Prática | Lista
 
-![Main](https://raw.githubusercontent.com/ProfKleberSouza/atividade-pratica---lista-ORZAYAZ/main/Imagens/20210420_19h32m06s_grim.png)
+![Main](https://raw.githubusercontent.com/ProfKleberSouza/atividade-pratica---lista-ORZAYAZ/main/Imagens/Menu_Atividade.png)
 
 ## Objetivo:
  O programa 'SCE' faz parte de um trabalho dado pelo professor Kleber Souza aos estudantes da disciplina de AEDII, com intuito de praticar os ensinos sobre TAD. 
@@ -34,6 +34,6 @@ make Main
 ./Main
 ```
 ## Exemplo de lista:
-![Exemplo](https://raw.githubusercontent.com/ProfKleberSouza/atividade-pratica---lista-ORZAYAZ/main/Imagens/20210420_19h35m11s_grim.png)
+![Exemplo](https://raw.githubusercontent.com/ProfKleberSouza/atividade-pratica---lista-ORZAYAZ/main/Imagens/Lista_Atividade.png)
 
 
