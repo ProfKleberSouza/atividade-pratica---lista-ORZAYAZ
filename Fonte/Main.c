@@ -30,6 +30,9 @@ void Menu (Lista *Estoque)
 {
 	int Opcao = 0;
 	int Voltar = 0;
+	
+	char Aux;
+	
 	Opcao = Escolha();
 	
 	switch(Opcao)
@@ -82,7 +85,8 @@ void Menu (Lista *Estoque)
 				printf("Digite o código do produto: ");
 				scanf("%d", &P.codigo);
 				printf("Digite a descrição do produto: ");
-				scanf("%s", P.descricao);
+				scanf("%c",&Aux);
+				scanf("%[^\n]",P.descricao);
 				printf("Digite a quantidade do produto: ");
 				scanf("%d", &P.quantidade);
 				printf("Digite o valor do produto: ");
@@ -93,13 +97,13 @@ void Menu (Lista *Estoque)
 				printf("\n");
 				printf("  +-----------------------+\n");
 				printf("  | Infomações do produto |\n");
-				printf("  +-----------------------+------------------------+\n");
-				printf("  |        Código         | %d                      |\n",P.codigo);
-				printf("  +-----------------------+------------------------+\n");
-				printf("  |       Descrição       | %s              |\n",P.descricao);
-				printf("  |      Quantidade       | %d                     |\n",P.quantidade);
-				printf("  |         Valor         | %.2f                  |\n",P.valor);
-				printf("  +------------------------------------------------+\n");   
+				printf("  +-----------------------+-------------------------------+\n");
+				printf("  |        Código         | %-2d                            |\n",P.codigo);
+				printf("  +-----------------------+-------------------------------+\n");
+				printf("  |       Descrição       | %-30s|\n",P.descricao);
+				printf("  |      Quantidade       | %-3d                           |\n",P.quantidade);
+				printf("  |         Valor         | %04.2f                         |\n",P.valor);
+				printf("  +-------------------------------------------------------+\n");   
 				
 				Reiniciar();
 				scanf("%d", &Voltar);
@@ -130,7 +134,8 @@ void Menu (Lista *Estoque)
 				printf("Digite o código do produto: ");
 				scanf("%d", &P.codigo);
 				printf("Digite a descrição do produto: ");
-				scanf("%s", P.descricao);
+				scanf("%c",&Aux);
+				scanf("%[^\n]",P.descricao);
 				printf("Digite a quantidade do produto: ");
 				scanf("%d", &P.quantidade);
 				printf("Digite o valor do produto: ");
@@ -141,13 +146,13 @@ void Menu (Lista *Estoque)
 				printf("\n");
 				printf("  +-----------------------+\n");
 				printf("  | Infomações do produto |\n");
-				printf("  +-----------------------+------------------------+\n");
-				printf("  |        Código         | %d                      |\n",P.codigo);
-				printf("  +-----------------------+------------------------+\n");
-				printf("  |       Descrição       | %s              |\n",P.descricao);
-				printf("  |      Quantidade       | %d                     |\n",P.quantidade);
-				printf("  |         Valor         | %.2f                  |\n",P.valor);
-				printf("  +------------------------------------------------+\n");  
+				printf("  +-----------------------+-------------------------------+\n");
+				printf("  |        Código         | %-2d                            |\n",P.codigo);
+				printf("  +-----------------------+-------------------------------+\n");
+				printf("  |       Descrição       | %-30s|\n",P.descricao);
+				printf("  |      Quantidade       | %-3d                           |\n",P.quantidade);
+				printf("  |         Valor         | %04.2f                         |\n",P.valor);
+				printf("  +-------------------------------------------------------+\n");    
 				
 				Reiniciar();
 				scanf("%d", &Voltar);
@@ -361,7 +366,7 @@ void Menu (Lista *Estoque)
 			printf("  +---------------------------+\n");
 			printf("  | Exibir o tamanho da lista |\n");
 			printf("  +---------+-----------------+\n");
-			printf("  | Tamanho | %d               |\n",TamanhoLista(Estoque));
+			printf("  | Tamanho | %-2d            |\n",TamanhoLista(Estoque));
 			printf("  +---------+-----------------+\n");	
 			printf("\n");
 				
